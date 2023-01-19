@@ -38,7 +38,7 @@ int main(){
 	while(1){
 		display();
 		cout<<i<<" Generations";
-		//delay(0.0001);
+		//delay(50);
 		evolve();
 		i++;
 	}	
@@ -157,7 +157,7 @@ void menu(){
 	cout<<"1-Blinker\n2-Toad\n3-Beacon\n4-Pulsar\n5-Pentadecathlon\n";
 	cout<<"6-Block\n7-Beehive\n8-Loaf\n9-Boat\n10-Tub\n";
 	cout<<"11-Glider\n12-Light weight spaceship\n13-Middle weight spaceship\n14-Heavy weight spaceship\n";
-	cout<<"15-The R-pentomino\n16-Diehard\n17-Acorn\n18-Gosper Glider Gun\n19-Eater\n";
+	cout<<"15-The R-pentomino\n16-Diehard\n17-Acorn\n18-Gosper Glider Gun\n19-Eater\n20-Oscillator\n21-Heisenburp\n";
 	cout<<"Choose a pattern: ";cin>>n;
 	if(n==0) {
 		pattern(0,0,0,0);
@@ -404,10 +404,84 @@ void pattern(int n,int h,int k, float angle){
 			activate_cell(h+2,k+3,h,k,angle);
 			activate_cell(h+3,k+3,h,k,angle);
 			break;
+		case 20://random oscillator
+			activate_cell(h-3,k,h,k,angle);activate_cell(h-4,k,h,k,angle);
+			activate_cell(h-3,k-1,h,k,angle);activate_cell(h-4,k-1,h,k,angle);
+			activate_cell(h-3,k+1,h,k,angle);activate_cell(h-4,k+1,h,k,angle);
+			activate_cell(h-3,k+2,h,k,angle);activate_cell(h-4,k+2,h,k,angle);
+			activate_cell(h-3,k+3,h,k,angle);activate_cell(h-4,k+3,h,k,angle);
+			activate_cell(h-3,k+4,h,k,angle);activate_cell(h-4,k+4,h,k,angle);
+			
+			activate_cell(h+3,k,h,k,angle);activate_cell(h+4,k,h,k,angle);
+			activate_cell(h+3,k-1,h,k,angle);activate_cell(h+4,k-1,h,k,angle);
+			activate_cell(h+3,k-2,h,k,angle);activate_cell(h+4,k-2,h,k,angle);
+			activate_cell(h+3,k-3,h,k,angle);activate_cell(h+4,k-3,h,k,angle);
+			activate_cell(h+3,k-4,h,k,angle);activate_cell(h+4,k-4,h,k,angle);
+			activate_cell(h+3,k+1,h,k,angle);activate_cell(h+4,k+1,h,k,angle);
+			
+			activate_cell(h,k-3,h,k,angle);activate_cell(h,k-4,h,k,angle);
+			activate_cell(h+1,k-3,h,k,angle);activate_cell(h+1,k-4,h,k,angle);
+			activate_cell(h-1,k-3,h,k,angle);activate_cell(h-1,k-4,h,k,angle);
+			activate_cell(h-2,k-3,h,k,angle);activate_cell(h-2,k-4,h,k,angle);
+			activate_cell(h-3,k-3,h,k,angle);activate_cell(h-3,k-4,h,k,angle);
+			activate_cell(h-4,k-3,h,k,angle);activate_cell(h-4,k-4,h,k,angle);
+			
+			activate_cell(h,k+3,h,k,angle);activate_cell(h,k+4,h,k,angle);
+			activate_cell(h+1,k+3,h,k,angle);activate_cell(h+1,k+4,h,k,angle);
+			activate_cell(h+2,k+3,h,k,angle);activate_cell(h+2,k+4,h,k,angle);
+			activate_cell(h+3,k+3,h,k,angle);activate_cell(h+3,k+4,h,k,angle);
+			activate_cell(h+4,k+3,h,k,angle);activate_cell(h+4,k+4,h,k,angle);
+			activate_cell(h-1,k+3,h,k,angle);activate_cell(h-1,k+4,h,k,angle);
+			
+			break;
+		case 21://heisenburp
+			activate_cell(h-14,k-4,h,k,angle);
+			activate_cell(h-14,k-3,h,k,angle);
+			activate_cell(h-13,k-4,h,k,angle);
+			activate_cell(h-13,k-3,h,k,angle);
+			
+			activate_cell(h-14,k+4,h,k,angle);
+			activate_cell(h-14,k+3,h,k,angle);
+			activate_cell(h-13,k+4,h,k,angle);
+			activate_cell(h-13,k+3,h,k,angle);
+			
+			activate_cell(h+2,k-4,h,k,angle);
+			activate_cell(h+3,k-4,h,k,angle);
+			activate_cell(h+3,k-3,h,k,angle);
+			activate_cell(h+4,k-3,h,k,angle);
+			activate_cell(h-1,k-2,h,k,angle);
+			activate_cell(h-0,k-2,h,k,angle);
+			activate_cell(h+1,k-2,h,k,angle);
+			activate_cell(h+2,k-2,h,k,angle);
+			activate_cell(h+3,k-2,h,k,angle);
+			activate_cell(h-1,k-1,h,k,angle);
+			activate_cell(h-0,k-1,h,k,angle);
+			activate_cell(h+1,k-1,h,k,angle);
+			activate_cell(h+2,k-1,h,k,angle);
+			
+			activate_cell(h+2,k+4,h,k,angle);
+			activate_cell(h+3,k+4,h,k,angle);
+			activate_cell(h+3,k+3,h,k,angle);
+			activate_cell(h+4,k+3,h,k,angle);
+			activate_cell(h-1,k+2,h,k,angle);
+			activate_cell(h-0,k+2,h,k,angle);
+			activate_cell(h+1,k+2,h,k,angle);
+			activate_cell(h+2,k+2,h,k,angle);
+			activate_cell(h+3,k+2,h,k,angle);
+			activate_cell(h-1,k+1,h,k,angle);
+			activate_cell(h-0,k+1,h,k,angle);
+			activate_cell(h+1,k+1,h,k,angle);
+			activate_cell(h+2,k+1,h,k,angle);
+			
+			activate_cell(h+13,k+3,h,k,angle);
+			activate_cell(h+13,k+4,h,k,angle);
+			activate_cell(h+14,k+3,h,k,angle);
+			activate_cell(h+14,k+4,h,k,angle);
+			break;
+			
 		case 0://random pattern
 			randomPattern();
 	}
-	
 }
 
 
